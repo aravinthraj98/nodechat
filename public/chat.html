@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+         .grid-container {
+      display: grid;
+      
+      
+      grid-column-gap: 10px;
+      grid-row-gap:5px;
+      grid-template-columns: 25% 75%;
+      background-color:white;
+      padding: 10px;
+     
+    }
+    
+    .grid-item {
+      background-color: whitesmoke;
+      
+      min-width: 20%;
+      border: 1px;
+      padding: 10px;
+      font-size: 20px;
+      text-align: center;
+    }
+
+    #mybox{
+        width:auto;
+        border:2px saddlebrown;
+        max-height:500px;
+        overflow:scroll;
+        scroll-behavior: auto;
+    }
+    #chatbox{
+        width:50%;
+        height:auto;
+        background-color: lawngreen;
+       
+    }
+    #align{
+        text-align: center;
+    }
+    </style>
+</head>
+<body>
+    <div class='grid-container'>
+     <span class='grid-item' style='background-color: black;'> 
+        <h3 style='color:white'>ROOM:<i id='roomname' style='color:white;'></i></h3>
+         <p class='roomuser'>
+
+         </p>
+    </span> 
+    <span id='mybox'>
+    <p class='chat-msg'>
+        
+   
+    </p>
+    <br>
+</span>
+<form id='chat' style='bottom: 0px;'>   
+  <textarea id='msg'  maxLength="100" maxLines="3"  ></textarea>
+    <input type="submit" value="send">
+ </form>
+</div>
+</body>
+</html> 
+<script src="https://cdnjs.cloudflare.com/ajax/libs/qs/6.9.4/qs.min.js" 
+integrity="sha512-BHtomM5XDcUy7tDNcrcX1Eh0RogdWiMdXl3wJcKB3PFekXb3l5aDzymaTher61u6vEZySnoC/SAj2Y/p918Y3w==" crossorigin="anonymous"></script>
+<script src='/socket.io/socket.io.js'></script>
+
+<script src='/js/cl.js'></script>
