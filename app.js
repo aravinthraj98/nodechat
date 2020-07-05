@@ -46,6 +46,9 @@ io.on('connection',socket=>{
 
      
 });
+//if(process.env.NODE_ENV === "production"){
+   // app.use(express.static('bui'))}
+
 server.listen(PORT,()=>{
     console.log('connected')
 })
