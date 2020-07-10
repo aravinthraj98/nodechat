@@ -16,9 +16,10 @@ io.on('connection',socket=>{
         const user=userjoin(username,room,socket.id);
         const roomusers=roomuser(room);
         console.log(roomusers);
-        io.emit('roomusers',roomusers);
+        io.to(user.room).emit('roomusers',roomusers);
 
         socket.join(user.room);
+        io.to(user.room).emit('roomusers',roomusers);
         socket.emit('message',usermessage(username,`welcome to the chat ${room} room`,'center'));
         socket.broadcast.to(user.room).emit('message',usermessage(username,`has joined the chat`,'center'));
 
@@ -33,7 +34,7 @@ io.on('connection',socket=>{
          socket.broadcast.to(user.room).emit('message',usermessage(user.username,message,'left'));
          socket.emit('message1',usermessage(user.username ,message,'right'));
      })
-     socket.on('disconnect' ,()=>
+     socket.on('disconnect',()=>
      {
          const user=leftuser(socket.id);
          console.log(user[0].room);
