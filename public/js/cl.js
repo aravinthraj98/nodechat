@@ -85,7 +85,7 @@ function chatmessage(message,color){
         message.username='YOU';
     }
 
-    div.innerHTML=`<p style='background-color:lightgrey;border-radius:10px;margin-left:15px;margin-right:25px;padding:5px;'>${message.username} 
+    div.innerHTML=`<p  style='background-color:lightgrey;border-radius:10px;margin-left:15px;margin-right:25px;padding:5px;'>${message.username} 
     <br><b style='color:black;padding:10px;'>${message.text}&nbsp;</b><br><v style='font-size:10px;color:grey;'>${message.time}</v></p>`;
     document.querySelector('.chat-msg').appendChild(div);
   
