@@ -6,7 +6,7 @@ console.log(username);
 socket.emit('joinroom',{username,room});
 const chatmsg= document.querySelector('#mybox');
 socket.on('roomusers',message=>{
-    document.getElementById('roomname').innerHTML=message[0].room+'<br>'+'NO-OF-USERS:'+message.length;
+    document.getElementById('roomname').innerHTML="ROOM"+" :  "+message[0].room+'<br><br>'+'NO-OF-USERS:'+message.length;
     
 
     document.querySelector('.roomuser').innerHTML='';
@@ -29,7 +29,8 @@ socket.on('roomusers',message=>{
     x.style.width='30px';
     x.style.height='30px';
     x.style.fontSize='18px';
-    x.style.marginRight='10px'
+    x.style.marginRight='10px';
+   
 
   
     const div=document.createElement('i');
@@ -61,7 +62,15 @@ chatform.addEventListener("submit",e =>
 {
    
     e.preventDefault()
-    const msg=e.target.elements.msg.value;
+    var msg=e.target.elements.msg.value;
+    const msg1=msg.split(/\s/).join('')
+    if(msg1.length===0){
+        msg='👍';
+        console.log('empty');
+    }
+    else{
+        console.log(msg1.length);
+    }
     socket.emit('chatMessage',msg)
     e.target.elements.msg.value='';
     e.target.elements.msg.focus();
