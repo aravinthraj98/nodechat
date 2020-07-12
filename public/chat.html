@@ -1,17 +1,24 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
   <head>
     <title>Title</title>
     <!-- Required meta tags -->
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-
-    </style>
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
 
     <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+      integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
+      crossorigin="anonymous"
+    />
   </head>
   <body>
+<<<<<<< HEAD
     
     <button type="button" class=" btn btn-info form-control fixed-top" data-toggle="collapse" data-target="#demo">CLICK HERE ROOM INFO</button>
     <div id="demo" class="collapse" style='background-color: rgb(73, 72, 72);'>
@@ -53,22 +60,116 @@
              enterPressed=0;
           }
         
+=======
+    <button
+      type="button"
+      class="btn btn-info form-control"
+      data-toggle="collapse"
+      data-target="#demo"
+    >
+      CLICK HERE ROOM INFO
+    </button>
+    <div id="demo" class="collapse" style="background-color: rgb(73, 72, 72);">
+      <h3 style="color: white; padding-bottom: 20px;">
+        <button
+          type="button"
+          class="form-control"
+          id="roomname"
+          style="color: white; background-color: black; text-align: center;"
+          disabled
+        ></button>
+      </h3>
+      <br />
+      <p class="roomuser" style="text-align: center;"></p>
+      <br />
+    </div>
+    <br />
+    <div
+      class="container-fluid"
+      id="mybox"
+      style="
+        min-height: 550px;
+        max-height: 560px;
+        background-color: lightblue;
+        overflow: scroll;
+      "
+    >
+      <p class="chat-msg" style="padding-top: 300px;"></p>
+      <br /><br />
+    </div>
+    <br />
+    <form id="chat" style="text-align: center;">
+      <textarea
+        id="msg"
+        class="form-control"
+        rows="2"
+        placeholder="ENTER TEXT HERE"
+        maxlength="100"
+        maxLines="3"
+        style="
+          border-radius: 20px;
+          border-width: 4px;
+          outline: none;
+          border-color: black;
+          background-color: rgb(255, 219, 219);
+        "
+      ></textarea
+      >&nbsp;&nbsp;&nbsp;
+      <input
+        type="submit"
+        value="send"
+        id="send"
+        style="
+          background-color: rgb(153, 236, 29);
+          border-color: greenyellow;
+          border-radius: 10px;
+          width: 200px;
+          height: 50px;
+        "
+      /><br />
+    </form>
+    <script>
+      var enterPressed = 0;
+      window.onkeydown = function (e) {
+        var keycode = e.keycode || e.which;
+        if (keycode === 13) {
+          enterPressed = enterPressed + 1;
+>>>>>>> ebe559c9a503214928baefe5bf222a3ecbe88470
         }
-        </script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/qs/6.9.4/qs.min.js" 
-        integrity="sha512-BHtomM5XDcUy7tDNcrcX1Eh0RogdWiMdXl3wJcKB3PFekXb3l5aDzymaTher61u6vEZySnoC/SAj2Y/p918Y3w==" crossorigin="anonymous"></script>
-        <script src='/socket.io/socket.io.js'></script>
-        
-        <script src='/js/cl.js'></script>
-        
-      
+        setTimeout(function () {
+          enterPressed = 0;
+        }, 2000);
+        if (enterPressed === 2) {
+          document.getElementById('send').click();
+          enterPressed = 0;
+        }
+      };
+    </script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/qs/6.9.4/qs.min.js"
+      integrity="sha512-BHtomM5XDcUy7tDNcrcX1Eh0RogdWiMdXl3wJcKB3PFekXb3l5aDzymaTher61u6vEZySnoC/SAj2Y/p918Y3w=="
+      crossorigin="anonymous"
+    ></script>
+    <script src="/socket.io/socket.io.js"></script>
+
+    <script src="/js/cl.js"></script>
+
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
-    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+    <script
+      src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+      integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+      integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+      integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+      crossorigin="anonymous"
+    ></script>
   </body>
 </html>
-
-
-
