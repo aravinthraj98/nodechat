@@ -12,16 +12,16 @@
   <body>
     <div id="wrapper">
       <form action="chat.html">
-        <label for="user">
-          name:
-          <input type="text" name="username" id="user"
-        /></label>
-        <label for="room">
-          room:
-          <input type="text" name="room" id="room" />
-        </label>
+        <div class="form-group">
+          <label for="user">Name</label>
+          <input type="text" name="username" id="user" required />
+        </div>
+        <div class="form-group">
+          <label for="room">Room</label>
+          <input type="text" name="room" id="room" required />
+        </div>
 
-        <input type="submit" value="submit" />
+        <button type="submit" value="submit">Submit</button>
       </form>
     </div>
   </body>
