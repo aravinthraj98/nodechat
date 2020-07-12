@@ -3,16 +3,54 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
+
+    <style>
+      * {
+        padding: 0;
+        margin: 0;
+        box-sizing: border-box;
+      }
+
+      html {
+        font-size: 10px;
+      }
+
+      html,
+      body {
+        height: 100%;
+        width: 100%;
+      }
+
+      #wrapper {
+        width: 100%;
+        height: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+
+      form {
+        display: flex;
+        flex-direction: column;
+      }
+    </style>
+
+    <title>Index</title>
   </head>
   <body>
-    <form action="chat.html">
-      name:
-      <input type="text" name="username" id="user" /><br />
-      room:
-      <input type="text" name="room" id="room" /><br />
+    <div id="wrapper">
+      <form action="chat.html">
+        <label for="user">
+          name:
+          <input type="text" name="username" id="user"
+        /></label>
+        <label for="room">
+          room:
+          <input type="text" name="room" id="room" />
+        </label>
 
-      <input type="submit" value="submit" />
-    </form>
+        <input type="submit" value="submit" />
+      </form>
+    </div>
   </body>
 </html>
