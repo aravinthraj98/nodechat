@@ -10,6 +10,7 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
+  background: #f0ffff;
 }
 
 form {
@@ -17,6 +18,7 @@ form {
   border: 3px solid black;
   font-size: 2rem;
   width: 50%;
+  box-shadow: 1rem 1rem 1rem 1rem #000000f3;
 }
 
 .form-group {
