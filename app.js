@@ -1,5 +1,4 @@
 const express = require('express');
-const PORT = process.env.PORT || 8080;
 const app = express();
 const http = require('http');
 const server = http.createServer(app);
@@ -59,6 +58,8 @@ io.on('connection', (socket) => {
 //if(process.env.NODE_ENV === "production"){
 // app.use(express.static('bui'))}
 
+const PORT = process.env.PORT || 8080;
+
 server.listen(PORT, () => {
-  console.log('connected');
+  console.log(`Connected to port ${PORT}`);
 });
