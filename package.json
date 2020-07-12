@@ -2,12 +2,12 @@
   "name": "chat",
   "version": "1.0.0",
   "description": "chatapp",
-  "main": "",
+  "main": "app.js",
   "scripts": {
     "start": "node app.js",
-    "server":"nodemon app.js"
+    "server": "nodemon app.js"
   },
-  "author": "",
+  "author": "Aravind",
   "license": "ISC",
   "dependencies": {
     "express": "^4.17.1",
